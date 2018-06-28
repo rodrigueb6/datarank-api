@@ -1,0 +1,22 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "mocha": true
+    },
+    "extends": [
+        "plugin:prettier/recommended",
+        "react-app"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "trailingcomma": "es5",
+                "singleQuote": true,
+                "printWidth": 120
+            }
+        ]
+    }
+}

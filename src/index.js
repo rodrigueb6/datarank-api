@@ -1,10 +1,17 @@
 import path from 'path';
 import express from 'express';
-import mongoose from 'mongoose';
+import mongoose, { mongo } from 'mongoose';
 import auth from './routes/auth';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+import Promise from 'bluebird';
+
+dotenv.config();
 const app = express();
 app.use(bodyParser.json());
+
+mongoose.Promise = Promise;
+
 mongoose.connect('mongodb://localhost/datarank');
 
 app.use('/api/auth', auth);

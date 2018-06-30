@@ -13,9 +13,19 @@
   ],
   "author": "Brandon Rodriguez",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodrigueb6/datarank-api"
+  },
   "dependencies": {
+    "ajv": "^6.0.0",
     "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.3",
     "gravatar-url": "^2.0.0",
+    "mongoose": "^5.1.7",
+    "nodemon": "^1.17.5",
     "prop-types": "^15.6.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",

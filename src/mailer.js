@@ -28,3 +28,19 @@ export function sendConfirmationEmail(user) {
 
   transport.sendMail(email);
 }
+
+export function sendResetPasswordEmail(user) {
+  const transport = setup();
+  const email = {
+    from,
+    to: user.email,
+    subject: 'Reset your Datarank Password',
+    text: `
+          A request has been made to reset the password linked to this Datarank account. To reset your password, follow this link.
+          
+          ${user.generateResetPasswordLink()}
+          `
+  };
+
+  transport.sendMail(email);
+}

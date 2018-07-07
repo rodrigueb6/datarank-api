@@ -31,6 +31,10 @@ schema.methods.generateConfirmationUrl = function generateConfirmationUrl() {
   return `localhost:3000/confirmation/${this.confirmationToken}`;
 };
 
+schema.methods.generateResetPasswordLink = function generateResetPasswordLink() {
+  return `localhost:3000/reset_password/${this.generateResetPasswordToken()}`;
+};
+
 schema.methods.generateJWT = function generateJWT() {
   return jwt.sign(
     {
@@ -38,6 +42,16 @@ schema.methods.generateJWT = function generateJWT() {
       confirmed: this.confirmed
     },
     'secretkey'
+  );
+};
+
+schema.methods.generateResetPasswordToken = function generateResetPasswordToken() {
+  return jwt.sign(
+    {
+      _id: this._id
+    },
+    'secretkey',
+    { expiresIn: '2h' }
   );
 };
 
